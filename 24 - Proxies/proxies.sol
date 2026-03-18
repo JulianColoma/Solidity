@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.20;
+pragma solidity ^0.8.20;
 
 // IMPORTANTE: Para contratos actualizables, usamos la versión "-upgradeable" de las librerías.
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
