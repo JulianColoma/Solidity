@@ -7,48 +7,28 @@ pragma solidity ^0.8.20;
  */
 contract UnidadesYGas {
 
-    // Las variables de estado guardan el valor en Wei internamente.
-    // Solidity provee las palabras clave wei, gwei y ether.
+    // Las variables de estado guardan su valor numérico nativo.
+    // Solidity provee las palabras clave reservadas `wei`, `gwei` y `ether` 
+    // para facilitar trabajar con grandes cantidades de ceros.
+    
+    // 1 Wei es la unidad indivisible más pequeña de la red Ethereum.
     uint256 public unWei = 1 wei;
-    uint256 public unGwei = 1 gwei;     // Equivale a 1.000.000.000 wei (1e9)
-    uint256 public unEther = 1 ether;   // Equivale a 1.000.000.000.000.000.000 wei (1e18)
+    
+    // 1 Gwei equivale a 1.000.000.000 wei (mil millones de wei).
+    // Suele usarse para medir y pagar el precio del Gas.
+    uint256 public unGwei = 1 gwei;     
+    
+    // 1 Ether equivale a 1.000.000.000.000.000.000 wei (un trillón de wei).
+    // Es la unidad principal que manejamos los humanos.
+    uint256 public unEther = 1 ether;   
 
     /**
-     * @dev Demuestra que 1 ether es matematicamente igual a 1e18 wei.
+     * @dev A continuacion usamos una "funcion" de prueba.
+     * Esta funcion devuelve `true` probando la matemática interna de la EVM.
      */
-    function probarEquivalencia() external pure returns (bool) {
-        return 1 ether == 1e18; // Esto retornara true
+    function probarEquivalencia() public pure returns (bool) {
+        // Demuestra que 1 ether es matemáticamente igual a 1e18 wei (1 seguido de 18 ceros).
+        return 1 ether == 1e18; 
     }
 
-    /**
-     * @dev Funcion que recibe Ether. 
-     * Requiere que el usuario envie exactamente 1 Ether (enviado en Wei por debajo).
-     */
-    function recibirUnEther() external payable {
-        // msg.value siempre se evalua en Wei
-        require(msg.value == 1 ether, "Debes enviar exactamente 1 Ether");
-    }
-
-    /**
-     * @dev Bucle infinito simulado para demostrar el limite de gas.
-     * ADVERTENCIA: Llamar a esta funcion consumira todo el Gas Limit 
-     * que le asignes en la transaccion (o en Metamask) y luego fallara.
-     */
-    function provocarOutOfGas() external {
-        uint256 contador = 0;
-        
-        // Este bucle correra infinitamente hasta vaciar tu limite de gas
-        while (true) {
-            contador += 1;
-        }
-    }
-
-    /**
-     * @dev Solidity tiene una funcion global 'gasleft()' que devuelve
-     * la cantidad de gas restante en la ejecucion actual.
-     * Es util para calculos internos muy especificos.
-     */
-    function chequearGasRestante() external view returns (uint256) {
-        return gasleft();
-    }
 }

@@ -22,6 +22,6 @@ Los **Structs** son tipos de datos personalizados que permiten agrupar variables
 
 ## 📌 Puntos Clave 
 
-1.  **Mappings de Structs:** Es el patrón más común en Solidity: `mapping(uint => MiStruct)`.
+1.  **Agrupación Pura:** Es el patrón más común en Solidity para entidades: `struct MiStruct { ... }`.
 2.  **No son Clases:** A diferencia de la POO tradicional, los structs en Solidity no tienen métodos (funciones propias); son puramente contenedores de datos.
-3.  **Límites:** Si un struct es demasiado grande (muchos campos), podés encontrarte con el error "Stack too deep". En ese caso, conviene dividirlo.
+3.  **Límites:** Si un struct es demasiado grande (muchos campos), podés encontrarte con el error "Stack too deep" limitando compilaciones grandes. En ese caso, conviene dividirlo.

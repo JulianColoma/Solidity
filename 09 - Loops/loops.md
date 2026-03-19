@@ -4,6 +4,9 @@ Los bucles permiten ejecutar un bloque de código varias veces. En Solidity, su 
 
 ---
 
+> ⚠️ **Aclaración Importante:**
+> Al igual que los Condicionales, todo bucle en Solidity requiere estar recubierto por un bloque de `Función` para poder existir. Utiliza las funciones provistas en los ejemplos como "carcasas" y enfócate únicamente en la estructura interna del bucle.
+
 ## 📝 Teoría
 
 ### 1. For Loop

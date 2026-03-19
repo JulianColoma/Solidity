@@ -22,4 +22,4 @@ Evitan el uso de "números mágicos" (ej. usar `0` para "Activo" o `1` para "Ina
 
 1.  **Seguridad:** Al usar Enums, Solidity valida automáticamente que el valor asignado esté dentro del rango definido.
 2.  **Reset:** Si usas `delete` sobre una variable de tipo Enum, esta volverá a su estado inicial (índice 0).
-3.  **Integración:** En aplicaciones (Frontend), los Enums suelen recibirse como números, por lo que es vital documentar qué número corresponde a qué estado en el mapping.
+3.  **Integración:** En aplicaciones (Frontend), los Enums suelen recibirse como números, por lo que es vital documentar qué número corresponde a qué estado en la relación.

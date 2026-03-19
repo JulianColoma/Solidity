@@ -14,15 +14,13 @@ Este repositorio está estructurado de manera secuencial. Te recomendamos progre
 - [02 - Variables](./02%20-%20Variables)
 - [03 - Variables de Estado](./03%20-%20VariablesdeEstado)
 - [04 - Unidades y Gas](./04%20-%20Unidades%20y%20Gas)
-- [05 - Funciones](./05%20-%20Funciones)
-- [06 - Data Location](./06%20-%20Data%20Location)
-- [07 - Enums](./07%20-%20Enums)
-- [08 - Structs](./08%20-%20Structs)
-- [09 - Arrays vs Mappings](./09%20-%20Arrays%20vs%20Mappings)
-
-### 🔀 Control de Flujo
-- [10 - Condicionales](./10%20-%20Condicionales)
-- [11 - Loops](./11%20-%20Loops)
+- [05 - Enums](./05%20-%20Enums)
+- [06 - Structs](./06%20-%20Structs)
+- [07 - Arrays vs Mappings](./07%20-%20Arrays%20vs%20Mappings)
+- [08 - Condicionales](./08%20-%20Condicionales)
+- [09 - Loops](./09%20-%20Loops)
+- [10 - Funciones](./10%20-%20Funciones)
+- [11 - Data Location](./11%20-%20Data%20Location)
 - [12 - Modifiers](./12%20-%20Modifiers)
 
 ### 🏛️ Contratos en Solidity

@@ -4,6 +4,10 @@ Los condicionales permiten ejecutar diferentes bloques de código según se cump
 
 ---
 
+> ⚠️ **Aclaración Importante:**
+> En Solidity, los bloques de lógica y control de flujo como los *Condicionales* no pueden existir sueltos dentro del Contrato Inteligente. Siempre deben residir dentro de un bloque especial llamado `Función`.
+> Aún no hemos visto en detalle qué son las Funciones (lo veremos pronto). Por el momento, concéntrate estrictamente en la sintaxis del `if` y no te preocupes por todo lo que lo rodea en los ejemplos y ejercicios.
+
 ## 📝 Teoría
 
 ### 1. Estructura If-Else

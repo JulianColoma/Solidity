@@ -8,48 +8,30 @@ pragma solidity ^0.8.20;
 contract ConfiguracionMap {
 
     // 1. CONSTANTE: El valor se define directo en el codigo.
+    // Las variables constantes no cuestan gas despues de ser compiladas.
     // Ideal para limites estrictos o valores fijos (ej. limite de aulas a registrar).
     uint256 public constant LIMITE_PUNTOS_MAPA = 500;
     string public constant NOMBRE_PROYECTO = "FacuMapp UTN FRLP";
 
     // 2. INMUTABLE: El valor se define al momento de desplegar el contrato.
-    // Ideal para definir quien es el administrador o el timestamp de creacion.
+    // Ideal para definir quien es el administrador o el timestamp de creacion original.
     address public immutable administrador;
     uint256 public immutable fechaDeDespliegue;
 
-    // 3. VARIABLE NORMAL: Ocupa storage y puede cambiar (muy caro).
+    // 3. VARIABLE NORMAL: Ocupa storage de forma regular y puede cambiar (muy caro escribirla).
     uint256 public puntosRegistrados;
 
     /**
-     * @dev El constructor se ejecuta UNA SOLA VEZ cuando el contrato se sube a la red.
-     * Es el unico lugar donde podemos darle valor a las variables 'immutable'.
+     * @dev El 'constructor' es un bloque especial de codigo que se ejecuta UNA SOLA VEZ 
+     * en toda la vida del contrato: en el instante exacto en que se sube a la red.
+     * Es el unico lugar donde podemos darle valor dinámico a las variables 'immutable'.
      */
     constructor() {
-        // msg.sender aca es la billetera que esta pagando el despliegue
+        // msg.sender aca es la billetera que esta pagando el despliegue del contrato
         administrador = msg.sender;
         
-        // block.timestamp es una variable global con la fecha actual
+        // block.timestamp es una variable global con la fecha actual del bloque
         fechaDeDespliegue = block.timestamp;
     }
 
-    /**
-     * @dev Funcion de prueba para ver el uso en conjunto.
-     */
-    function registrarPunto() external {
-        // Leemos la variable 'immutable' (barato)
-        require(msg.sender == administrador, "Solo el admin puede registrar");
-        
-        // Leemos la variable 'constant' (barato) y la normal (caro)
-        require(puntosRegistrados < LIMITE_PUNTOS_MAPA, "Se alcanzo el limite del mapa");
-
-        // Modificamos la variable normal (caro)
-        puntosRegistrados += 1;
-    }
-
-    /*
-    Si intentaramos hacer esto, el contrato no compilaria:
-    function cambiarAdmin(address _nuevoAdmin) external {
-        administrador = _nuevoAdmin; // ERROR: Cannot assign to immutable variable
-    }
-    */
 }

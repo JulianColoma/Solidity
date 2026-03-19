@@ -8,51 +8,30 @@ pragma solidity ^0.8.20;
 contract VariablesFacuMapp {
 
     // 1. VARIABLES DE ESTADO
-    // Se guardan en la blockchain. Cuestan Gas.
+    // Se guardan en la blockchain de manera permanente. Cuestan Gas al ser modificadas.
+    // Al declararlas 'public', se pueden leer gratuitamente desde afuera.
     uint256 public totalInteracciones;
     address public ultimoUsuario;
 
     /**
-     * @dev Funcion que combina los tres tipos de variables.
+     * @dev A continuacion usamos una "funcion" de prueba.
+     * Recuerda que la lógica y variables locales solo pueden existir dentro de funciones.
      */
-    function registrarInteraccion(uint256 _multiplicador) external payable returns (uint256) {
+    function registrarInteraccion(uint256 _multiplicador) public payable returns (uint256) {
         
         // 2. VARIABLES GLOBALES
-        // Proveidas por la EVM. No las declaramos nosotros.
-        require(msg.value > 0, "Debes enviar algo de Ether"); // msg.value = wei enviados
-        ultimoUsuario = msg.sender;                           // msg.sender = quien ejecuta esto
+        // Proveidas directamente por la EVM (Ethereum Virtual Machine). No las declaramos nosotros.
+        ultimoUsuario = msg.sender; // msg.sender = "direccion de quien llama a este contrato"
 
         // 3. VARIABLES LOCALES
-        // Viven solo aca adentro. Son baratas.
-        uint256 calculoTemporal = msg.value * _multiplicador;
-        uint256 timestampActual = block.timestamp;            // block.timestamp = tiempo del bloque
+        // Viven solo aca adentro de esta funcion. No se guardan en la blockchain.
+        uint256 calculoTemporal = 5 * _multiplicador;
+        uint256 timestampActual = block.timestamp; // block.timestamp = tiempo de creacion del bloque
 
-        // Modificamos el estado usando un calculo local
-        totalInteracciones += 1;
+        // Modificamos el estado usando matematica simple
+        totalInteracciones = totalInteracciones + 1;
 
-        // Retornamos la variable local. Al terminar la funcion, 'calculoTemporal' se destruye.
+        // Retornamos la variable local. Al terminar la funcion, 'calculoTemporal' y 'timestampActual' se destruyen.
         return calculoTemporal;
-    }
-
-    /**
-     * @dev Ejemplo de optimizacion usando variables locales como "cache".
-     */
-    function bucleInoptimo() external {
-        // MAL: Leer y escribir en la variable de estado 'totalInteracciones' en cada iteracion cuesta muchisimo gas.
-        for(uint256 i = 0; i < 5; i++) {
-            totalInteracciones += 1; 
-        }
-    }
-
-    function bucleOptimo() external {
-        // BIEN: Copiamos el estado a una variable local (memoria)
-        uint256 iteracionesLocales = totalInteracciones;
-
-        for(uint256 i = 0; i < 5; i++) {
-            iteracionesLocales += 1; // Las operaciones en memoria son casi gratis
-        }
-
-        // Al final, actualizamos la variable de estado UNA sola vez
-        totalInteracciones = iteracionesLocales;
     }
 }
