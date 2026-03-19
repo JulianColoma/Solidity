@@ -25,5 +25,8 @@ pragma solidity ^0.8.20;
 
 contract EjerciciosUnidadesYGas {
     // 📝 Escribe tu código aquí debajo
-
+    uint public presupuestoViaje = 2 ether;
+    uint public costoPeaje = 500 gwei;
+    bool public esCorrecto = (1 ether == 1e18);
+    uint public saldoFinal = (presupuestoViaje - costoPeaje);
 }

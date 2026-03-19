@@ -14,5 +14,11 @@ pragma solidity ^0.8.20;
 
 contract EjerciciosVariablesEstado {
     // 📝 Escribe tu código aquí debajo
+    uint256 public constant PI = 3141592653589793238; // no existen los decimales en solidity poner 3,14 es un error
+    //  Ejemplo de pi con 18 decimales 1e18
 
+    address private immutable administrador;
+    constructor(){
+        administrador = msg.sender;
+    }
 }

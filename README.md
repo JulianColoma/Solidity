@@ -25,7 +25,7 @@ Este repositorio está estructurado de manera secuencial. Te recomendamos progre
 - [11 - Loops](./11%20-%20Loops)
 - [12 - Modifiers](./12%20-%20Modifiers)
 
-### 🏛️ Programación Orientada a Objetos en Solidity
+### 🏛️ Contratos en Solidity
 - [13 - Contratos](./13%20-%20Contratos)
 - [14 - Herencia](./14%20-%20Herencia)
 - [15 - Contratos Abstractos e Interfaces](./15%20-%20Contratos%20abstractos%20e%20Interfaces)

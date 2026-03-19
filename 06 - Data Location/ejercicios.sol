@@ -2,25 +2,20 @@
 pragma solidity ^0.8.20;
 
 /*
- * 🎓 EJERCICIO 1: Storage vs Memory
+ * 🎓 EJERCICIO 1: El efecto "RAM" vs "Disco Rígido"
+ * * Crea una variable de estado: string public texto = "Original";
+ * - Función 1 (Temporal): Crea una función que use 'memory' para copiar 
+ * la variable 'texto' y cambiarle el valor a "Cambiado". 
+ * (Al probarla en Remix, verás que la variable global NO cambia).
+ * - Función 2 (Permanente): Crea una función que use 'storage' para 
+ *  cambiar el valor de la variable en storage a "Cambiado". 
+ * (Al probarla, verás que el cambio SÍ persiste en el contrato).
  *
- * Define globalmente en el contrato una variable de texto. Construye dos funciones 
- * que intenten actualizar y pisar esta variable con un contenido diferente:
- * - La primera función debe asignar el texto global en una región temporal y efímera 
- *   durante la ejecución, y cambiar su valor allí mismo.
- * - La segunda debe alterar permanentemente el dato, apuntando e interceptando la 
- *   referencia original de almacenamiento persistente.
- * Observa cuidosaménte el comportamiento final de la variable pública tras la ejecución de ambas.
- *
- *
- * 🎓 EJERCICIO 2: Optimizando inputs de sólo lectura
- * 
- * Crea un método externalizado que pretenda recibir un texto gigante y pesado como parámetro. 
- * En este caso, no tienes ninguna intención de mutarlo ni transformarlo dentro de tu lógica, 
- * por lo que exprimirás al máximo el ahorro de comisiones. 
- * 
- * Aplica la ubicación de datos más estricta sobre el parámetro del input para que su procesamiento
- * cueste la mínima cantidad posible de gas a las billeteras de los usuarios.
+ * 🎓 EJERCICIO 2: Ahorro máximo (Calldata)
+ * * Crea una función 'external' llamada 'leerMensajePesado'.
+ * * Debe recibir un string como parámetro.
+ * * Como solo queremos recibirlo y no modificarlo, aplicá la ubicación 
+ * 'calldata' para que sea lo más barato posible en gas.
  */
 
 contract EjerciciosDataLocation {

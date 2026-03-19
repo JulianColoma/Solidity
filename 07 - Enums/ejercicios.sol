@@ -6,20 +6,54 @@ pragma solidity ^0.8.20;
  *
  * Modela un ciclo restrictivo para un pedido en línea. Los estados permitidos y 
  * prefijados en sistema deben ser exclusivamente: "Creado", "Pagado", "En Camino" y "Entregado". 
- * 
- * Configura el contrato para que albergue globalmente el estado en curso de una compra, 
- * y provee una función que permita transicionar y sobrescribir obligatoriamente ese estatus a "En Camino".
- *
- *
- * 🎓 EJERCICIO 2: Leyendo índices en un Frontend
- * 
- * Basándote en el modelo anterior, supón que un cliente consulta de qué tipo y forma 
- * le emitirá el formato tu red a una aplicación de React si le pidiésemos el estado prefijado. 
- * Construye una función de visualización que retorne nativamente la representación 
- * formal subyacente del estado "Pagado". ¿Qué byte o int expulsa realmente el contrato?
+ * que el contrato tenga un struct pedido con dni, comprador, monto y estado (un enum) 
+ * defini un mapping de pedido por dni (simple, un pedido por dni) y las siguientes funciones:
+ * crearPedido, pagarPedido, enviarPedido, recibioPedido 
  */
 
 contract EjerciciosEnums {
     // 📝 Escribe tu código aquí debajo
+    enum estadoPedido {
+        Creado,
+        Pagado,
+        EnCamino,
+        Entregado
+    }
+    struct pedido{
+        uint dni;
+        string comprador;
+        uint monto;
+        estadoPedido estado;
+    }
+    mapping (uint => pedido) listaPedidos; 
+    function crearPedido(string calldata _nombre, uint _dni)external {
+        listaPedidos[_dni] = pedido({
+            dni: _dni,
+            comprador: _nombre,
+            monto: 0,
+            estado: estadoPedido.Creado
+        }
+        );
+    }
+
+    function pagarPedido(uint _dni, uint _pago) external {
+        pedido memory p1 = listaPedidos[_dni];
+        p1.monto = _pago;
+        p1.estado = estadoPedido.Pagado;
+        listaPedidos[_dni] = p1;
+    }
+
+    function enviarPedido(uint _dni) external{
+        pedido memory p1 = listaPedidos[_dni];
+        p1.estado = estadoPedido.EnCamino;
+        listaPedidos[_dni] = p1;
+    }
+
+    function recibioPedido(uint _dni) external{
+        pedido memory p1 = listaPedidos[_dni];
+        p1.estado = estadoPedido.Entregado;
+        listaPedidos[_dni] = p1;
+    }
+
 
 }

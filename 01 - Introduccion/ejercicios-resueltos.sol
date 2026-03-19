@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT 
+
 pragma solidity ^0.8.20;
 
 /*
@@ -11,6 +12,9 @@ pragma solidity ^0.8.20;
  */
 
 contract EjerciciosIntroduccion {
-    // 📝 Escribe tu código aquí debajo para el Ejercicio 1
-    
+    //  Ejercicio 1
+    uint8 public miNroFav = 7;
+
 }
+
+
