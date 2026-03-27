@@ -1,0 +1,74 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "miLibroFavorito",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "titulo",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "autorId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "anioPublicacion",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "disponible",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"06 - Structs/ejercicios-resueltos.sol": "EjerciciosStructs"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"06 - Structs/ejercicios-resueltos.sol": {
+			"keccak256": "0x7d26474588fa9b85d63d44dfefd02cb879b1a2e51ad5fa613b69a36ed04269f4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://852ebb79b77480e5221fd09d26194626f97603aac363dfd75db68de6f606d427",
+				"dweb:/ipfs/QmT4q8p87azS1p9k5S7MeCNPQac3gMrmbasWxTpQRm1bVg"
+			]
+		}
+	},
+	"version": 1
+}

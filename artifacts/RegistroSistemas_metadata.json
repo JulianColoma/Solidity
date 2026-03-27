@@ -1,0 +1,104 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "alumnoDestacado",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "legajo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "estaActivo",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "billetera",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "alumnoNuevo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "legajo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "estaActivo",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "billetera",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Ejemplo practico de Structs para agrupar datos de alumnos.",
+			"kind": "dev",
+			"methods": {},
+			"title": "RegistroSistemas",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"06 - Structs/structs.sol": "RegistroSistemas"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"06 - Structs/structs.sol": {
+			"keccak256": "0x57d9a8d6478e178e4d455290214f88b3e95745a17027c5867e578d5c1d0ad336",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://832ec201ec2353b5253f8aecbf5b721a4094457da9ba50a0a59121f0491ed0ea",
+				"dweb:/ipfs/QmYdb4XEGhG1VHEcU8DpJAYoPdx5KjyBgGT9M2kNm29gZH"
+			]
+		}
+	},
+	"version": 1
+}

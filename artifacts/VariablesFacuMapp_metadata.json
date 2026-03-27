@@ -1,0 +1,97 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_multiplicador",
+						"type": "uint256"
+					}
+				],
+				"name": "registrarInteraccion",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalInteracciones",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ultimoUsuario",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Contrato para ilustrar los tres tipos de variables en Solidity.",
+			"kind": "dev",
+			"methods": {
+				"registrarInteraccion(uint256)": {
+					"details": "A continuacion usamos una \"funcion\" de prueba. Recuerda que la lógica y variables locales solo pueden existir dentro de funciones."
+				}
+			},
+			"title": "VariablesFacuMapp",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"02 - Variables/variables.sol": "VariablesFacuMapp"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"02 - Variables/variables.sol": {
+			"keccak256": "0x8df3747b970003255753373c885261142ecd192ee89133c52e628469c8c503dc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://deabe9d57c5197d7638bd7920c952b3882e39cc9e613b82e5a999a2560e27ffe",
+				"dweb:/ipfs/QmYhwLpHEVqymBfvpDivWm16QcFB56u3DiJaURBjSoJJko"
+			]
+		}
+	},
+	"version": 1
+}
