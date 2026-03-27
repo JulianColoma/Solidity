@@ -9,7 +9,7 @@ contract GestionSaldos {
 
     // 1. Declaracion: Vincula una direccion (address) con un balance (uint256)
     // Al ser public, puedes consultarlo pasando la direccion: saldos("0x...")
-    mapping(address => uint256) public saldos;
+    mapping(address => uint256) public wallets;
 
     // 2. Mapping para saber si una direccion esta registrada
     // Por defecto, cualquier direccion no registrada devolvera 'false'

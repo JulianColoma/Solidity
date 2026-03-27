@@ -70,5 +70,45 @@
         "file": "06 - Structs/ejercicios-resueltos.sol"
       }
     }
+  },
+  "07 - Arrays vs Mappings/nestedmapping.sol": {
+    "__sources__": {
+      "07 - Arrays vs Mappings/nestedmapping.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/**\n * @title SistemaPermisos\n * @dev Ejemplo de declaracion de mappings anidados para gestionar accesos.\n */\ncontract SistemaPermisos {\n\n    // Estructura: ID del Laboratorio => (Direccion del Alumno => Tiene Acceso?)\n    // Para consultar necesitas el ID y la direccion: permisosLaboratorio(1, \"0x...\")\n    mapping(uint256 => mapping(address => bool)) public permisosLaboratorio;\n\n    // Estructura: Dueño => (Gasto Autorizado => Cantidad)\n    // Muy comun en tokens para delegar gastos\n    mapping(address => mapping(address => uint256)) public autorizacionGastos;\n\n}",
+        "file": "07 - Arrays vs Mappings/nestedmapping.sol"
+      }
+    }
+  },
+  "07 - Arrays vs Mappings/ejercicios-resueltos.sol": {
+    "__sources__": {
+      "07 - Arrays vs Mappings/ejercicios-resueltos.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/*\n * 🎓 EJERCICIO 1: Arrays\n *\n * Desarrolla el almacenamiento de un inventario numérico de precios expandible. \n * Crea un array dinámico público de números enteros (`uint`) llamado `tarifas`.\n *\n *\n * 🎓 EJERCICIO 2: Trabajando con Mappings\n * \n * Desarrolla el core de un sistema de saldos bancarios internos. \n * Cada usuario distinto que interactúe con el contrato debe tener un casillero virtual asociando \n * de manera íntima su dirección propia con un balance numérico. \n * \n * Implementa un mapping público llamado `saldos` que asocie un `address` con un `uint`.\n */\n\ncontract EjerciciosArraysMappings {\n    // 📝 Escribe tu código aquí debajo\n    uint[] public tarifas;\n\n    mapping (address => uint) public saldos;\n}\n",
+        "file": "07 - Arrays vs Mappings/ejercicios-resueltos.sol"
+      }
+    }
+  },
+  "07 - Arrays vs Mappings/arrays.sol": {
+    "__sources__": {
+      "07 - Arrays vs Mappings/arrays.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/**\n * @title Arrays\n * @dev Contrato didactico para entender la declaracion de arrays fijos y dinamicos.\n */\ncontract Arrays {\n    \n    // Array de tamaño fijo (se inicializa con ceros si no se le dan valores)\n    // Al hacerlo public, Solidity genera una forma de consultar posiciones individuales: arrayFijo(0)\n    uint256[3] public arrayFijo = [10, 20, 30];\n\n    // Array dinamico, su tamaño puede crecer\n    // Como es public, Solidity permite leer elementos individuales: arrayDinamico(indice)\n    uint256[] public arrayDinamico;\n    \n    // Array dinamico inicializado con valores\n    uint256[] public arrayDinamicoInicializado = [5, 15, 25];\n}",
+        "file": "07 - Arrays vs Mappings/arrays.sol"
+      }
+    }
+  },
+  "07 - Arrays vs Mappings/mapping.sol": {
+    "__sources__": {
+      "07 - Arrays vs Mappings/mapping.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/**\n * @title GestionSaldos\n * @dev Ejemplo didactico para entender la declaracion de los Mappings.\n */\ncontract GestionSaldos {\n\n    // 1. Declaracion: Vincula una direccion (address) con un balance (uint256)\n    // Al ser public, puedes consultarlo pasando la direccion: saldos(\"0x...\")\n    mapping(address => uint256) public wallets;\n\n    // 2. Mapping para saber si una direccion esta registrada\n    // Por defecto, cualquier direccion no registrada devolvera 'false'\n    mapping(address => bool) public esMiembro;\n    \n    // 3. Mapping conectando un ID numerico con una direccion\n    mapping(uint256 => address) public duenosDeTickets;\n\n}",
+        "file": "07 - Arrays vs Mappings/mapping.sol"
+      }
+    }
+  },
+  "07 - Arrays vs Mappings/ejercicios.sol": {
+    "__sources__": {
+      "07 - Arrays vs Mappings/ejercicios.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/*\n * 🎓 EJERCICIO 1: Arrays\n *\n * Desarrolla el almacenamiento de un inventario numérico de precios expandible. \n * Crea un array dinámico público de números enteros (`uint`) llamado `tarifas`.\n *\n *\n * 🎓 EJERCICIO 2: Trabajando con Mappings\n * \n * Desarrolla el core de un sistema de saldos bancarios internos. \n * Cada usuario distinto que interactúe con el contrato debe tener un casillero virtual asociando \n * de manera íntima su dirección propia con un balance numérico. \n * \n * Implementa un mapping público llamado `saldos` que asocie un `address` con un `uint`.\n */\n\ncontract EjerciciosArraysMappings {\n    // 📝 Escribe tu código aquí debajo\n\n}\n",
+        "file": "07 - Arrays vs Mappings/ejercicios.sol"
+      }
+    }
   }
 }
