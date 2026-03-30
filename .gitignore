@@ -1,0 +1,17 @@
+# --- Remix / Solidity Artifacts ---
+artifacts/
+cache/
+.deps/
+
+# --- Dependencies ---
+node_modules/
+package-lock.json
+
+# --- Editor / OS Specific ---
+.states/
+.DS_Store
+Thumbs.db
+.remix/
+
+# --- Environment Variables ---
+.env
