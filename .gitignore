@@ -1,4 +1,5 @@
 # --- Remix / Solidity Artifacts ---
+remix.config.json
 artifacts/
 cache/
 .deps/
