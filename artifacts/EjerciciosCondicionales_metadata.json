@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "edad",
+						"type": "uint256"
+					}
+				],
+				"name": "verificarEdad",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "edad",
+						"type": "uint256"
+					}
+				],
+				"name": "verificarTernario",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"08 - Condicionales/ejercicios.sol": "EjerciciosCondicionales"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"08 - Condicionales/ejercicios.sol": {
+			"keccak256": "0xe6a3a990b691fd7faa6b9708726ca3ac1749874d026597aec198046392aa0850",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2331377905f5ac06e3aa035a2d34310fc01b3e9a83773486bfc1da367bacae28",
+				"dweb:/ipfs/QmcJfi6zkVMNsMu12dkjXfMiFSxLxnUADVWZeMBbaBbRUm"
+			]
+		}
+	},
+	"version": 1
+}
