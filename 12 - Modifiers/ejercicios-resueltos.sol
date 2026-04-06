@@ -25,13 +25,57 @@ pragma solidity ^0.8.20;
  */
 
 contract Ejercicio1 {
-    // 📝 Escribe tu código aquí debajo
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    error OnlyOwner();
+
+    modifier checkOwner() {
+        if (msg.sender != owner) revert OnlyOwner();
+        _;
+    }
+
+    function funcionProtegida() external checkOwner {
+        // contenido de la funcion, solo accesible por el owner
+    }
 }
 
 contract Ejercicio2 {
-    // 📝 Escribe tu código aquí debajo
+    error InsufficientBalance();
+    modifier checkValue(uint256 minimo) {
+        if (msg.value < minimo) revert InsufficientBalance();
+        _;
+    }
+    function pagarCuota() external payable checkValue(2000 wei) {}
 }
 
 contract Ejercicio3 {
-    // 📝 Escribe tu código aquí debajo
+    address public owner;
+    mapping(address => bool) public admins;
+
+    constructor() {
+        owner = msg.sender;
+        admins[msg.sender] = true;
+    }
+
+    error OnlyOwner();
+    error OnlyAdmin();
+
+    modifier checkOwner() {
+        if (msg.sender != owner) revert OnlyOwner();
+        _;
+    }
+    modifier checkAdmin() {
+        if (!admins[msg.sender]) revert OnlyAdmin();
+        _;
+    }
+
+    function agregarAdmin(address _admin) external checkOwner {
+        admins[_admin] = true;
+    }
+
+    function funcionParaAdmins() external checkAdmin {}
 }
