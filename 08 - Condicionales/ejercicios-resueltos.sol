@@ -26,14 +26,18 @@ contract EjerciciosCondicionales {
     // 📝 Escribe tu código aquí debajo para el Ejercicio 1
     function verificarEdad(uint256 edad) public pure returns (string memory) {
         // --- TU CÓDIGO AQUÍ ---
-        
+        if(edad >= 18){
+            return "Autorizado";
+        }else{
+            return "Denegado";
+        }
         // ----------------------
     }
     
     // 📝 Escribe tu código aquí debajo para el Ejercicio 2
     function verificarTernario(uint256 edad) public pure returns (string memory) {
         // --- TU CÓDIGO AQUÍ ---
-
+        return  (edad >= 18)? "Autorizado": "Denegado";
         // ----------------------
     }
 

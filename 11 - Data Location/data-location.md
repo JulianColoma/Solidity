@@ -24,6 +24,3 @@ Es una ubicación especial, no modificable, donde se guardan los argumentos de l
 * **Costo:** Es la opción más barata de todas.
 * **Comportamiento:** Es **solo de lectura (read-only)**. Se recomienda usar siempre para parámetros de funciones `external` si no necesitas modificar los datos recibidos.
 
----
-
-## 🧪 Laboratorio de Código

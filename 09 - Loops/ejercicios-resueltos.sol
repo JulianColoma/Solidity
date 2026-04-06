@@ -29,9 +29,22 @@ pragma solidity ^0.8.20;
 contract EjerciciosLoops {
     
     // 📝 Escribe tu código aquí debajo para el Ejercicio 1
-    function sumatoria(uint256 n) public pure returns (uint256) {
+    function sumatoria(uint256 n, uint256 _limite) public pure returns (uint256) {
         // --- TU CÓDIGO AQUÍ ---
-        
+
+       if(n > _limite || n == 0){
+        return 0;
+        }
+
+        uint256 total;
+        for(uint256 i = n; i <= _limite; i+=n){
+            total += n;
+            if (_limite - i < n) {
+                break;
+            }   
+        }
+        return total;
+
         // ----------------------
     }
 
@@ -40,7 +53,17 @@ contract EjerciciosLoops {
     // 📝 Escribe tu código aquí debajo para el Ejercicio 2
     function buscarTesorito(uint256 clave) public view returns (uint256) {
         // --- TU CÓDIGO AQUÍ ---
-        
+        uint256[] memory copia = repositorioDeCifras;
+        uint256 i;
+        uint256 limite = copia.length;
+        while(i < limite){
+            if(copia[i] == clave){
+                break;
+            }else{
+                i++;
+            }
+        }
+        return (i == limite)? 999 : i;
         // ----------------------
     }
 }
