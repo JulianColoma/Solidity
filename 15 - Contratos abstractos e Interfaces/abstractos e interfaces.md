@@ -24,6 +24,6 @@ Son incluso más restrictivas que los contratos abstractos. Solo definen las fun
 
 ## 📌 Puntos Clave
 
-1. **Estandarización:** Las interfaces son la base de los estándares como **ERC-20** o **ERC-721**. Permiten que tu billetera (Metamask) sepa cómo pedir el saldo de cualquier token sin conocer el código de cada uno.
+1. **Estandarización:** Las interfaces son la base de los estándares como **ERC-20** o **ERC-721**. Permiten que tu billetera sepa cómo pedir el saldo de cualquier token sin conocer el código de cada uno.
 2. **Interoperabilidad:** Si querés que tu contrato interactúe con un contrato de otra persona, solo necesitás la **Interface** de su contrato para llamarlo.
 3. **Contrato Abstracto vs Interface:** Usá `abstract` cuando quieras proveer algo de código base (como un `mapping` o un `owner`) y una `interface` cuando solo quieras definir un canal de comunicación puro.

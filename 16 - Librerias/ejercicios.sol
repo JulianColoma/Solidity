@@ -1,21 +1,25 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+// 📦 IMPORTACIÓN REAL: Traemos la herramienta estándar de la industria
+import "@openzeppelin/contracts/utils/Strings.sol";
+
 /*
- * 🎓 EJERCICIO 1: Encapsulamiento sin Estado (Bibliotecas Externas)
+ * 🎓 INTRODUCCIÓN A OPENZEPPELIN
+ * No reinventamos la rueda. Usamos '@openzeppelin/contracts' porque es el código
+ * más auditado y seguro del ecosistema. Hoy usamos 'Strings' para convertir datos,
+ * pero es la base para crear cualquier Token o NFT profesional.
  *
- * Desarraiga comportamientos genéricos de tus modelos primarios evitando la saturación costosa y los redespliegues kilométricos o desmesurados de algoritmos crudos al compilar reiteradas facsímiles de la misma lógica interna inferior.
- * 
- * Para evadir esto, concibe un ambiente modular apartado pero encapsulado superiormente. Oriéntalo a procesar con gas nulo local una operatoria matemática general limitante, capaz de restar pero precaviendo desbordes letales e infranqueables en el intento al verificar que las sustracciones sean saludables numéricamente hablando para el sistema de signos propuesto.
- * Adjunta dicho módulo aislado en la esfera de un contrato aplicativo base de demostración y engánchalo para requerir de sus atributos delegados sin inmiscuirle almacenamiento adicional al importado.
+ * 🎓 EJERCICIO 1: Encapsulamiento de Lógica (Biblioteca Propia)
+ * 1. Creá una 'library' llamada 'CalculosCombustible'.
+ * 2. Definí la función 'gastarSeguro(uint256 _actual, uint256 _gasto)' 
+ * que valide el saldo actual y devuelva la resta.
+ * 3. Usala en la función 'acelerar' para descontar de a 10 unidades.
  *
- *
- * 🎓 EJERCICIO 2: Superposición al Primitivo
- * 
- * Acudiendo sin excepción de continuidad a al módulo bibliotecario del punto original, omite y rehuye por completo utilizar la mecánica de paso referencial genérico convencional como el de invocar pasivamente a la librería inyectando las cifras a la suerte entre los apéndices redondeados contiguos a este como se habitúa.
- * 
- * Transforma profundamente la visión de los primitivos nativos matemáticos numéricos crudos alojados en memoria dentro el ámbito principal del contrato invocador y transmutalos bajo una técnica de ensamble especial pseudovirtualizando la semántica objeto de éstos para que adquieran artificial y biológicamente un nuevo poder subyacente que los faculten a evocar el recálculo modular librero superior de la resta pero emanando el disparo matemáticamente hablando atado al final y derivado de la invocación de su método personal directamente sobre el primitivo interviniente inicial de la maniobra de lectura y sujeción referencial.
+ * 🎓 EJERCICIO 2: Usando el Estándar (Strings)
+ * 1. Aplicá la librería para los uint256.
+ * 2. Creá una función 'verCombustibleTexto' que devuelva el combustible 
+ * convertido a string usando '.toString()'.
  */
 
-// 📝 Escribe tus bibliotecas y anexadores sintácticos aquí debajo
-
+// 📝 Escribe tu código aquí debajo

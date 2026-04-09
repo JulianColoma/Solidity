@@ -23,26 +23,5 @@ pragma solidity ^0.8.20;
 
 contract FacultadesUTN {
     // 📝 Escribe tu código aquí debajo
-    address public owner;
-    uint256 public fechaLanzamiento;
-    string public nombreSede;
-    uint256 public capacidadMaxima;
-    bool public sistemaHabilitado;
-
-    constructor(string memory _nombre, uint _capacidad) {
-        owner = msg.sender;
-        fechaLanzamiento = block.timestamp;
-        nombreSede = _nombre;
-        capacidadMaxima = _capacidad;
-        sistemaHabilitado = true;
-    }
-    error OnlyOwner();
-
-    modifier onlyOwner() {
-        if (msg.sender != owner) revert OnlyOwner();
-        _;
-    }
-    function cambiarEstado(bool _estado) external onlyOwner {
-        sistemaHabilitado = _estado;
-    }
+    
 }

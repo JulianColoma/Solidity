@@ -50,6 +50,8 @@ contract MapaFacultad is BaseSeguridad {
     function mensajeDeIdentidad() public view override returns (string memory) {
         // Podemos llamar a la logica del padre usando 'super'
         string memory mensajePadre = super.mensajeDeIdentidad();
+        /* en solidity no se pueden concatenar strings con +, se utiliza el estandar abi 
+           el cual se vera en otra clase mas adelante */
         return string(abi.encodePacked(mensajePadre, " -> Y ahora soy MapaFacultad"));
     }
 

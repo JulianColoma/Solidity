@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 // 1. LA INTERFACE: Solo dice QUE se puede hacer.
 // No tiene codigo, solo los nombres de las funciones.
 interface IElectrodomestico {
-    function encender() external; // "Cualquier cosa que sea un electrodomestico se puede encender"
+    function encender() external; // "Cualquier cosa que sea un electrodomestico se debe poder encender"
 }
 
 // 2. EL CONTRATO ABSTRACTO: Tiene algo de codigo, pero esta incompleto.
@@ -25,14 +25,14 @@ abstract contract CafeteraBase is IElectrodomestico {
 contract CafeteraExpress is CafeteraBase {
     
     // Aqui llenamos el hueco que dejo el padre
-    function hacerCafe() public override returns (string memory) {
+    function hacerCafe() public pure override returns (string memory) {
         return "Haciendo cafe express con mucha espuma...";
     }
 }
 
 contract CafeteraCapsulas is CafeteraBase {
     
-    function hacerCafe() public override returns (string memory) {
+    function hacerCafe() public pure override returns (string memory) {
         return "Pinchando capsula y haciendo cafe...";
     }
 }

@@ -2,21 +2,27 @@
 pragma solidity ^0.8.20;
 
 /*
- * 🎓 EJERCICIO 1: Contratos Incompletos 
+ * 🎓 Ejercicio integrador: Vehículos 
+ * * 🎓 PARTE 1: El Estándar (Interface)
+ * * Imagina que estás creando un sistema para que cualquier peaje pueda hablar con cualquier vehículo.
+ * 1. Definí una interfaz llamada 'IVehiculo'. 
+ * 2. Solo debe tener dos funciones:
+ * - acelerar.
+ * - detener.
  *
- * Fuerza lógicamente a los arquitectos futuros a acatar estándares sin excusas en tus desarrollos, 
- * modelando un molde especial de contrato intencionalmente carente de un cuerpo íntegro que deba recharse al desplegar por inconsistente.
- * 
- * Impón en su esquema un estatuto con el comportamiento de un recálculo matemático de la figura `Area` riguroso, pero omite desarrollar y encasillar los procedimientos entre sus corchetes, delegando al vacío e indicando intachablemente la marca de agua del polimorfismo que arrastrará para ceder de por vida este método incompleto subyacentemente al destino.
- * Posterirormente, formula un derivado de sistema dependiente "cuadrangular" con cuerpo verídico, dependiente e indeleble a tu plano maestro, que asuma las riendas de subsanarlo y complete irrevocablemente las ecuaciones deudoras hasta permitir la compilación limpia del hijo salvador y restituidor del bloque cerrado.
+ * 🎓 PARTE 2: El Molde Base (Contract Abstract)
+ * * Ahora crea una base común para ahorrar código, pero que no se puede desplegar sola.
+ * 1. Definí un contrato abstracto 'BaseVehiculo' que herede de IVehiculo.
+ * 2. Agregá una variable publica combustible.
+ * 3. Implementá 'detener()' para que siempre ponga una variable enMovimiento en false.
+ * 4. Dejá 'acelerar()' como una función a implementar.
+ * 5. Creá una función nueva cargarCombustible() que sea solo para los hijos.
  *
- *
- * 🎓 EJERCICIO 2: Blindaje de Comunicación Externa
- * 
- * Construye de forma figurativa la carcaza de acople comunicacional abstracto inter-blockchain de tu Sistema. Tu contrato propio intentará interactuar de mentira con otro Ecosistema financiero inmerso del cual desconocemos total y absolutamente cómo fueron configuradas, encriptadas sus variables interiores de storage subyacentes ni de implementaciones algoritmicas.
- * 
- * Extrae y esboza de manera pulcra única y llanamente los cabezales, firmas, menús y conectores del cascarón formal foráneo para esa vía hipotética permitiéndote invocar luego las pericias del gigante virtual desde el interior resguardado de un método particular de tu propio contrato empaquetante emulando con esto una vía de paso referencial y ajena a esa carcaza fantasma.
+ * 🎓 PARTE 3: El Modelo Real (Contract)
+ * * Es hora de fabricar un vehículo de verdad.
+ * 1. Creá el contrato 'Auto' que herede de 'BaseVehiculo'.
+ * 2. Implementá la lógica de 'acelerar()': debe gastar 10 de combustible y poner 'enMovimiento' en true.
+ * 3. Agregá un constructor para que el auto nazca con 100 de combustible y detenido.
  */
 
-// 📝 Escribe tus interfaces y contratos resolutivos aquí debajo
-
+// 📝 Escribe tu código aquí debajo
