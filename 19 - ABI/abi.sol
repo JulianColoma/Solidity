@@ -32,5 +32,8 @@ contract LaboratorioABI {
     function diferenciaEncoding(uint256 _n) public pure returns (bytes memory packed, bytes memory normal) {
         packed = abi.encodePacked(_n); // Mas corto (solo los bytes necesarios)
         normal = abi.encode(_n);       // Mas largo (rellena hasta 32 bytes con ceros)
+        //para deshacer la codificacion usamos decode
+        //(uint256 numero) = abi.decode(normal, (uint256));
+        
     }
 }

@@ -2,24 +2,22 @@
 pragma solidity ^0.8.20;
 
 /*
- * 🎓 EJERCICIO 1: Empaquetar Datos Estructurados
+ * 🎓 EJERCICIO 1: Armado del Paquete Técnico 
  *
- * Toma un número (uint256) y un parámetro de texto (string). Mediante las herramientas 
- * de bajo nivel estándar de Solidity, empaqueta estructuradamente ambas variables 
- * en una salida de bytes conjunta, de tal manera que puedan ser enviadas como una 
- * carga técnica pura y unificada en memoria.
+ * Tomá un número (uint256) y un texto (string) para unificarlos en un solo bloque. 
+ * Usá la herramienta de codificación estándar de Solidity para transformar ambos 
+ * datos en una sola tira de bytes que pueda ser enviada o guardada como una 
+ * carga única de memoria, manteniendo la estructura necesaria para su posterior lectura.
  *
  *
- * 🎓 EJERCICIO 2: Desempaquetar Datos (Re-hidratación)
- * 
- * Suponiendo que un contrato te retorna una respuesta cifrada empaquetada en el formato 
- * estándar de bajo nivel en bytes de la red (proveniente del ejercicio previo), 
- * interpreta esa carga técnica desglosándola e hidratándola asus dos componentes 
- * originales intactos y tipados correctamente (el uint256 y el string) y expúlsalos 
- * limpiamente de tu función de manera leíble a sus formatos puros devolviéndolos.
+ * 🎓 EJERCICIO 2: Apertura y Recuperación de Datos 
+ * * Tomá la carga de bytes generada en el paso anterior y realizá el proceso inverso. 
+ * Debés "abrir" ese paquete de bytes indicándole al sistema exactamente qué tipos 
+ * de datos (el uint256 y el string) se encuentran escondidos adentro para 
+ * recuperarlos con su valor y formato original de forma limpia.
  */
 
 contract EjerciciosABI {
     // 📝 Escribe tu código aquí debajo
-
+   
 }
