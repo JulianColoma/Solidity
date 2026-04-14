@@ -2,25 +2,46 @@
 pragma solidity ^0.8.20;
 
 /*
- * 🎓 EJERCICIO 1: Caching de Variables de Estado en Memoria
+ * 🎓 EJERCICIO: Auditoría y Optimización Pro
  *
- * Posees un arreglo global inmenso en el disco duro del contrato del cual debes extraer 
- * y sumar sus registros uno a uno mediante ciclos repetitivos en una función. 
- * Identifica el punto crítico de lectura costosa transaccional y rediséñalo alterando el entorno 
- * temporal donde se solicita momentáneamente dicho valor global, para abaratar el peso logístico 
- * subyacente de todo el proceso reiterativo drásticamente a lo largo de los giros del bucle.
- *
- *
- * 🎓 EJERCICIO 2: Empaquetamiento de Structs (Variable Packing)
- * 
- * Acomoda y agrupa las propiedades de un "Struct Ineficiente" compuesto por dos enteros chicos de 
- * 128 bytes y un entero gigante divisorio de 256 metido en el medio de ellos. 
- * Declara tú mismo un nuevo `Struct Optimo` reacomodando sus variables lógicamente 
- * para que los datos subyacentes logren compartir las mismas particiones físicas estáticas, reduciendo 
- * intrínsecamente el encarecimiento general del despliegue del contrato y lectura.
+ * El siguiente contrato gestiona el inventario de una ferretería, pero fue escrito 
+ * sin pensar en los costos de gas. Actualmente es carísimo de desplegar y de ejecutar.
+ * * 📝 TAREA: 
+ * 1. Identificá los 7 puntos de fuga de gas (Storage, Validaciones, Bucles, Tipos de datos).
+ * 2. Creá el contrato 'FerreteriaOptima' aplicando las correcciones técnicas.
+ * 3. Usá 'Custom Errors', 'Variable Packing' y las keywords de memoria correctas.
  */
 
-contract EjerciciosOptimizacionGas {
-    // 📝 Escribe tu código aquí debajo
+contract FerreteriaSucia {
+    string public sucursal = "La Plata - Berisso";
+    address public administrador;
 
+    struct Articulo {
+        uint256 codigo;
+        bool enStock;
+        uint128 precio;
+        bool importado;
+        uint256 estanteria;
+    }
+
+    mapping(uint256 => Articulo) public inventario;
+
+    constructor() {
+        administrador = msg.sender;
+    }
+
+    function registrarLote(uint256[] memory _codigos) public {
+        require(msg.sender == administrador, "Solo el administrador oficial de la sucursal puede realizar la carga de stock");
+        
+        for (uint256 i = 0; i < _codigos.length; i++) {
+            uint256 id = _codigos[i];
+            inventario[id].enStock = true;
+        }
+    }
+
+    function consultarSucursal() public view returns (string memory) {
+        return sucursal;
+    }
 }
+
+// 📝 Escribí tu versión optimizada acá abajo

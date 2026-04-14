@@ -1,4 +1,4 @@
-# ⛽ Solidity Mastery: Optimización de Gas y Errores Pro
+# ⛽ Solidity Mastery: Optimización de Gas y Errores 
 
 La optimización en Solidity no es un lujo, es una necesidad. Cada unidad de gas ahorrada mejora la experiencia del usuario y la eficiencia del protocolo.
 
