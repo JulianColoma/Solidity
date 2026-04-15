@@ -1,24 +1,22 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
 /*
- * 🎓 EJERCICIO 1: Creación de un Fungible Token (ERC-20)
+ * 🎓 EJERCICIO 1: Configuración del Token
+ * 1. Heredar de ERC20.
+ * 2. Crear un constructor que reciba un nombre y un símbolo dinámico.
+ * 3. Mintear un suministro inicial de 1.000.000 de tokens al creador del contrato.
+ * ⚠️ Debes tener en cuenta los 18 decimales.
  *
- * Construye la matriz formal de tu propia criptomoneda integrando la lógica basal fungible estándar. 
- * Al momento de la inicialización original biológica del contrato, encárgate de inyectar 
- * sin costo inicial una oferta monetaria fundacional astronómica y atribúyesela irrevocablemente 
- * en exclusividad absoluta a los registros contables del gestor y desplegador humano original.
- *
- *
- * 🎓 EJERCICIO 2: Distribución Masiva Limitante
- * 
- * Desarrolla en este mismo estrato un canal especial y generalizado para inyectar transacciones a 
- * toda tu comunidad de una vez. Requerirás que acepte una lista dinámica paralela de futuros dueños 
- * a regalar, y de un caudal económico estático de corte e inyección individual predeterminado. 
- * Asegúrate que, antes de dispararse en bucle a irrigar dichas carteras individualmente sumándole su saldo, 
- * el sistema primero escudriñe implacablemente si posees en tu haber el capital madre mínimo general suficiente 
- * de solvencia para abarcar la totalidad de dicho obsequio unánime sin desfallecer en el intento durante su giro.
+ * 🎓 EJERCICIO 2: El Airdrop (Distribución Masiva)
+ * Imagina que querés promocionar tu token. Debes crear una función 'repartirTokens'.
+ * 1. Debe recibir un array de direcciones (address[] calldata recipients).
+ * 2. Debe recibir un monto fijo a enviar a cada uno (uint256 amount).
+ * 3. La función debe validar que el total a repartir no supere el balance del contrato.
+ * 4. Usar un bucle 'for' para realizar las transferencias.
+ * ⚠️ Al heredar de ERC20, ya tenés la función balanceOf y transfer disponibles.
  */
 
-// 📝 Escribe tu código aquí debajo
-
+// 📝 Escribí tu contrato aquí
