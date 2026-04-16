@@ -25,9 +25,17 @@ import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 
 contract CyberMarket is ERC1155 {
     // Definí tus IDs acá:
+    uint public constant CREDITOS = 0;
+
+    uint public constant CHIP_IA = 1;
+    uint public constant PLACAS_MADRE = 2;
 
     constructor() ERC1155("https://api.cyberpunk.com/metadata/{id}.json") {
         // Minteo inicial:
+        address duenio = msg.sender;
+        _mint(duenio, CREDITOS, 10000 * 10 ** 18);
+        _mint(duenio, CHIP_IA, 1);
+        _mint(duenio, PLACAS_MADRE, 50);
     }
 
     /**
@@ -39,5 +47,16 @@ contract CyberMarket is ERC1155 {
         uint256 precio
     ) public {
         // Tu lógica de intercambio acá:
+        require(
+            balanceOf(msg.sender, idNFT) >= 1,
+            "No eres propietario de ese token"
+        );
+        require(balanceOf(comprador, CREDITOS) >= precio, "Saldo insuficiente");
+
+        _safeTransferFrom(comprador, msg.sender, CREDITOS, precio);
+        _safeTransferFrom(msg.sender, comprador, idNFT, 1);
     }
+
+    // Nota: Para que safeTransferFrom funcione entre terceros,
+    // el contrato debe tener permisos o usar lógica interna.
 }
