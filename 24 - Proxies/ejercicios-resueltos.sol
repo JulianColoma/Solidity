@@ -22,3 +22,34 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
  */
 
 // --- ESCRIBE TUS CONTRATOS AQUÍ ---
+
+contract MotorV1 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
+    uint256 public puntaje;
+
+    constructor() {
+        _disableInitializers();
+    }
+
+    function initialize() public initializer {
+        __Ownable_init(msg.sender);
+        __UUPSUpgradeable_init();
+    }
+    function subirPuntaje() public virtual {
+        puntaje++;
+    }
+
+    function _authorizeUpgrade(
+        address newImplementation
+    ) internal override onlyOwner {}
+}
+
+contract MotorV2 is MotorV1 {
+    string public version;
+
+    function setVersion(string memory _newVersion) public {
+        version = _newVersion;
+    }
+    function subirPuntaje() public override {
+        puntaje += 10;
+    }
+}
