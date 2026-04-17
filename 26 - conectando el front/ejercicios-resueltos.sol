@@ -16,4 +16,23 @@ pragma solidity ^0.8.20;
  * 2. mostra un alert cuando se emita un evento
  */
 
-// --- ESCRIBE TU CONTRATO AQUÍ ---
+contract EjerciciosConexionFront {
+    event CertificadoEmitido(
+        address indexed alumno,
+        bytes32 hashCertificado,
+        uint256 fecha
+    );
+
+    function emitir(address _alumno, bytes32 _hash) public {
+        emit CertificadoEmitido(_alumno, _hash, block.timestamp);
+    }
+
+    /*
+
+     const contrato = new ethers.Contract(address, abi, provider);
+     contrato.on("NombreDelEvento", (alumno, hash, fecha) => {
+     alert(`¡Nuevo certificado para ${alumno}!`);
+     });
+
+     */
+}
