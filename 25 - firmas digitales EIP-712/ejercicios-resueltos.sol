@@ -22,4 +22,26 @@ import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
  * - Recuperar el address usando '.recover(_signature)'.
  */
 
-// --- ESCRIBE TU CONTRATO AQUÍ ---
+contract VerificadorMastery {
+    using ECDSA for bytes32;
+
+    function recuperarManual(
+        bytes32 _hash,
+        uint8 _v,
+        bytes32 _r,
+        bytes32 _s
+    ) public pure returns (address) {
+        return ecrecover(_hash, _v, _r, _s);
+    }
+
+    function recuperarSeguro(
+        bytes32 _hash,
+        bytes memory _signature
+    ) public pure returns (address) {
+        // Envolvemos el hash original con el prefijo: "\x19Ethereum Signed Message:\n32"
+        bytes32 ethSignedHash = _hash.toEthSignedMessageHash();
+
+        // Recuperamos la dirección del firmante usando la firma completa (65 bytes)
+        return ethSignedHash.recover(_signature);
+    }
+}

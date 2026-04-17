@@ -9,23 +9,28 @@ contract VerificadorCertificados is EIP712 {
 
     address public profesorAutorizado;
 
-   // declaramos la autoridad
+    // declaramos la autoridad
     constructor(address _profesor) EIP712("FacuMapp", "1") {
         profesorAutorizado = _profesor;
     }
 
     function validarCertificado(
-        address _alumno, 
-        bytes32 _certificadoHash, 
+        address _alumno,
+        bytes32 _certificadoHash,
         bytes memory _signature
     ) public view returns (bool) {
-        
         // 1. Creamos el digest (hash estructurado)
-        bytes32 digest = _hashTypedDataV4(keccak256(abi.encode(
-            keccak256("Certificado(address alumno,bytes32 certificadoHash)"),
-            _alumno,
-            _certificadoHash
-        )));
+        bytes32 digest = _hashTypedDataV4(
+            keccak256(
+                abi.encode(
+                    keccak256(
+                        "Certificado(address alumno,bytes32 certificadoHash)"
+                    ),
+                    _alumno,
+                    _certificadoHash
+                )
+            )
+        );
 
         // 2. Recuperamos la dirección del firmante
         address firmante = digest.recover(_signature);
