@@ -44,19 +44,17 @@ external returns (uint256 validationData) {
 ```
 ---
 
-### **Auditoría y Seguridad Defensiva**
+### Auditoría y Seguridad Defensiva
+
 No se trata de herramientas, se trata de una mentalidad.
 
-Herramientas Críticas:
+### Herramientas Críticas
 
-Slither: Análisis estático (detecta errores de sintaxis y lógica común).
+* **Slither**: Análisis estático (detecta errores de sintaxis y lógica común).
+* **Fuzzing (Foundry)**: Prueba tu contrato con miles de valores aleatorios para encontrar en qué número exacto se rompe la lógica.
 
-Fuzzing (Foundry): Prueba tu contrato con miles de valores aleatorios para encontrar en qué número exacto se rompe la lógica.
+### Checklist de Seguridad 
 
-Checklist de Seguridad para tu Repo:
-
-Check-Effects-Interactions: Siempre actualizar el estado antes de llamar externamente.
-
-Límites de Gas: Cuidado con los bucles for sobre arrays que pueden crecer infinitamente (DoS).
-
-Privilegios: ¿Quién puede llamar a upgradeTo? Siempre usar Ownable o AccessControl.
+* **Check-Effects-Interactions**: Siempre actualizar el estado antes de realizar llamadas externas.
+* **Límites de Gas**: Evitar bucles `for` sobre arrays que pueden crecer indefinidamente (riesgo de DoS).
+* **Privilegios**: Definir claramente quién puede llamar a `upgradeTo`; usar `Ownable` o `AccessControl`.
